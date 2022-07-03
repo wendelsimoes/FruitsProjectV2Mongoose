@@ -24,27 +24,36 @@ async function main() {
   //   });
 
   // For many inserts
-  bananaModel.insertMany(
-    [
-      {
-        name: "Apple",
-        score: 8,
-        review: "Great fruit",
-      },
-      {
-        name: "Orange",
-        score: 6,
-        review: "Kinda sour",
-      },
-      {
-        name: "Banana",
-        score: 9,
-        review: "Great stuff!",
-      },
-    ],
-    function (err, small) {
-      if (err) return handleError(err);
-      // saved!
+  // bananaModel.insertMany(
+  //   [
+  //     {
+  //       name: "Apple",
+  //       score: 8,
+  //       review: "Great fruit",
+  //     },
+  //     {
+  //       name: "Orange",
+  //       score: 6,
+  //       review: "Kinda sour",
+  //     },
+  //     {
+  //       name: "Banana",
+  //       score: 9,
+  //       review: "Great stuff!",
+  //     },
+  //   ],
+  //   function (err, small) {
+  //     if (err) return handleError(err);
+  //     // saved!
+  //   }
+  // );
+
+  // Query
+  bananaModel.find(function (err, fruits) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(fruits);
     }
-  );
+  });
 }
