@@ -53,6 +53,7 @@ async function main() {
     if (err) {
       console.log(err);
     } else {
+      mongoose.connection.close();
       console.log(fruits);
     }
   });
